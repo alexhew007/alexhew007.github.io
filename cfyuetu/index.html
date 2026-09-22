@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CF月兔透视提供专业的CF穿越火线月兔辅助透视工具介绍、使用教程及安全注意事项。帮助玩家了解透视功能的原理与风险，提供合规的游戏建议与反作弊指南。">
+    <meta name="keywords" content="cf月兔透视,穿越火线透视,CF辅助,游戏透视工具,反作弊">
+    <title>cf月兔透视-穿越火线游戏辅助工具与使用安全指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e60012; /* CF Red */
+            --secondary-color: #1a1a1a;
+            --accent-color: #ffd700;
+            --text-main: #333;
+            --text-light: #666;
+            --bg-body: #f4f6f9;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c0b0e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #ff1a25;
+            transform: translateY(-2px);
+        }
+
+        /* Warning Banner */
+        .warning-banner {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #ffeeba;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            color: var(--secondary-color);
+        }
+
+        /* Feature List */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: var(--border-radius);
+            transition: transform 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Info Section */
+        .info-section {
+            margin-top: 30px;
+        }
+
+        .info-block {
+            margin-bottom: 20px;
+        }
+
+        .info-block h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .info-block p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .info-block ul {
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .info-block li {
+            margin-bottom: 5px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #eee;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: none;
+            padding-left: 10px;
+            border-left: 2px solid #ddd;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #aaa;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Utility */
+        .text-center { text-align: center; }
+        .mt-2 { margin-top: 20px; }
+        .mb-2 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>CF</span>辅助指南
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">功能介绍</a></li>
+                    <li><a href="#">使用教程</a></li>
+                    <li><a href="#">安全须知</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="warning-banner">
+        ⚠️ 重要提示：游戏辅助工具可能违反《穿越火线》用户协议，使用辅助可能导致账号封禁。请理性游戏，支持正版。
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>CF月兔透视 <span class="highlight">功能解析与安全指南</span></h1>
+            <p>深入理解CF月兔透视的工作原理、功能特性以及使用过程中的法律风险与安全注意事项。</p>
+            <a href="#guide" class="cta-button">查看详细使用教程</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-grid">
+            <!-- Left Content -->
+            <div class="main-content">
+                
+                <section class="card" id="guide">
+                    <h2>功能特性详解</h2>
+                    <p>CF月兔透视是一款针对《穿越火线》游戏的第三方辅助工具。它主要通过内存扫描与内存读写技术，获取游戏内的实体坐标信息，并在屏幕上以可视化的方式呈现。</p>
+                    
+                    <div class="feature-list mt-2">
+                        <div class="feature-item">
+                            <span class="feature-icon">👁️</span>
+                            <h3>全图透视</h3>
+                            <p>开启后，地图中所有可交互的物体（如箱子、掩体）及玩家模型均会显示轮廓。</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎯</span>
+                            <h3>自瞄辅助</h3>
+                            <p>部分版本集成了自动瞄准功能，可辅助锁定移动中的敌人头部位置。</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🛡️</span>
+                            <h3>防封检测</h3>
+                            <p>内置反反作弊机制，尝试绕过官方检测系统，但成功率无法保证。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>使用流程与操作</h2>
+                    <div class="info-block">
+                        <h3>1. 下载与安装</h3>
+                        <p>请从可靠的来源获取工具压缩包。解压后，请勿直接运行，通常需要先进行脱壳处理或破解。</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>2. 驱动注入</h3>
+                        <p>运行工具时，通常需要管理员权限以加载内核驱动，从而实现对游戏进程的内存读写。</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>3. 参数配置</h3>
+                        <p>在游戏外设配置界面，玩家可以调节透视距离、显示颜色、自瞄灵敏度等参数。</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>4. 游戏内激活</h3>
+                        <p>启动《穿越火线》客户端，进入游戏大厅或房间，使用工具内的热键（如F1、F2）切换功能开启状态。</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>风险提示与注意事项</h2>
+                    <p>使用任何形式的第三方辅助工具都存在极高的风险，请务必了解以下后果：</p>
+                    <ul style="margin-top: 15px; margin-left: 20px; color: #d9534f;">
+                        <li><strong>账号封禁：</strong> 官方反作弊系统（如ACE）会定期扫描内存异常，一旦检测到透视特征码或异常操作，将面临永久封禁。</li>
+                        <li><strong>隐私泄露：</strong> 部分辅助软件会收集用户电脑信息或游戏数据，存在隐私安全风险。</li>
+                        <li><strong>外挂病毒：</strong> 非官方渠道下载的文件可能捆绑木马，导致账号被盗或电脑中毒。</li>
+                    </ul>
+                    <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                        <strong>法律风险：</strong> 在中国大陆，使用外挂辅助进行网络游戏属于违法行为，可能面临行政处罚。
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>热门标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">CF辅助</a>
+                        <a href="#" class="tag">月兔透视</a>
+                        <a href="#" class="tag">游戏外挂</a>
+                        <a href="#" class="tag">反作弊</a>
+                        <a href="#" class="tag">封号预防</a>
+                        <a href="#" class="tag">游戏攻略</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">透视会被封号吗？</div>
+                        <div class="faq-answer">虽然存在防封检测机制，但官方检测力度日益加强，使用透视存在极高的封号风险。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">需要什么配置运行？</div>
+                        <div class="faq-answer">通常需要Windows系统及管理员权限，对显卡要求不高，但需确保游戏客户端版本匹配。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何下载最新版？</div>
+                        <div class="faq-answer">请关注相关社区论坛，但请注意防范网络诈骗和病毒传播。</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>推荐阅读</h3>
+                    <ul style="font-size: 0.9rem; color: #555;">
+                        <li style="margin-bottom: 10px;"><a href="#">CF游戏公平竞技的重要性</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#">如何提升CF枪法技巧</a></li>
+                        <li><a href="#">ACE反作弊系统检测机制解析</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 CF辅助指南. All Rights Reserved.</p>
+            <p>本站仅提供技术原理与风险提示，不提供任何外挂下载服务。</p>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系站长</a>
+                <a href="#">隐私政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
