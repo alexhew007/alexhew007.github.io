@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="夜间开车注意事项全集。提供夜间行车安全指南、视线影响分析、灯光使用技巧、疲劳驾驶预防及特殊路况应对策略，帮助驾驶员提升夜间行车安全系数。">
+    <meta name="keywords" content="夜间开车注意事项,夜间行车安全,夜间驾驶技巧,疲劳驾驶预防,灯光使用方法">
+    <title>夜间开车注意事项-夜间行车安全指南与技巧</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a2332;
+            --accent-color: #ff9800;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 35, 50, 0.85), rgba(26, 35, 50, 0.7)), url('https://picsum.photos/seed/nightdrive/1920/600') no-repeat center center/cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #f57c00;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Core Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 152, 0, 0.1);
+            color: var(--accent-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Detailed Guide Section */
+        .guide-section {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .guide-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .guide-item h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guide-item h3::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .guide-item p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .guide-item ul {
+            margin-top: 16px;
+        }
+
+        .guide-item li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .guide-item li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Visual Aid Image */
+        .visual-aid {
+            background-color: #2c3e50;
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+        
+        .visual-aid img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin-bottom: 16px;
+        }
+
+        .visual-aid p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: var(--bg-white);
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f3f5;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 24px;
+            background-color: #fafafa;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer p {
+            padding: 20px 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+            }
+
+            nav ul {
+                margin-top: 16px;
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .guide-list {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+
+            .visual-aid {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>⚠️</span> 夜间行车安全指南
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#principles">核心原则</a></li>
+                    <li><a href="#lights">灯光技巧</a></li>
+                    <li><a href="#fatigue">疲劳预防</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>夜间开车注意事项</h1>
+        <p>夜间视线受限、路面反射复杂，掌握正确的驾驶技巧是保障您和他人安全的关键。</p>
+        <a href="#principles" class="cta-button">开始学习安全指南</a>
+    </section>
+
+    <main class="container">
+        
+        <!-- 核心原则 -->
+        <section id="principles">
+            <div class="section-header">
+                <h2>夜间驾驶核心原则</h2>
+                <p>夜间行车与白天截然不同，必须建立全新的安全意识</p>
+            </div>
+            <div class="principles-grid">
+                <article class="card">
+                    <div class="card-icon">👁️</div>
+                    <h3>控制车速与车距</h3>
+                    <p>夜间光线不足，反应时间延长。请务必降低车速，保持比白天更长的跟车距离，以便在突发情况时有足够的制动距离。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🚧</div>
+                    <h3>预判路面障碍</h3>
+                    <p>路面反光会掩盖坑洼、碎石或动物。养成观察远光灯照射区域变化的习惯，提前预判路况，避免急刹车。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🧠</div>
+                    <h3>保持专注与清醒</h3>
+                    <p>夜视能力随疲劳下降。长时间驾驶极易产生“隧道效应”。必须保证充足睡眠，每隔2小时强制休息。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>正确使用灯光</h3>
+                    <p>灯光是夜间行车的眼睛。根据路况正确切换近光灯、远光灯和示廓灯，避免强光干扰他人视线。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 详细指南 -->
+        <section id="lights" style="margin-top: 60px;">
+            <div class="section-header">
+                <h2>灯光与视线管理</h2>
+                <p>合理利用灯光，是克服夜间视距短的最佳手段</p>
+            </div>
+            
+            <div class="guide-section">
+                <div class="visual-aid">
+                    <img src="https://picsum.photos/seed/headlight/800/400" alt="车辆灯光示意图">
+                    <p>图示：近光灯与远光灯的正确照射范围对比</p>
+                </div>
+                
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <h3>近光灯的使用场景</h3>
+                        <p>在城市道路、有路灯的道路或会车时，必须使用近光灯。远光灯在近距离会车时会形成“眩光”，严重影响对方视线，极易引发事故。</p>
+                        <ul>
+                            <li>无路灯的乡村公路建议使用近光灯或远光单灯（仅右前灯）。</li>
+                            <li>在窄路会车时，应提前切换为近光灯，并减速靠右。</li>
+                            <li>通过人行横道或公交车站时，应提前切换近光，观察行人动态。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h3>远光灯的合理使用</h3>
+                        <p>远光灯能在极暗的环境下提供最佳视野，但必须在确保安全且无对向车辆时使用。</p>
+                        <ul>
+                            <li>在没有路灯的公路上行驶，且前方无来车时，可使用远光灯。</li>
+                            <li>遇到前方车辆同向行驶时，应切换为近光灯或示宽灯。</li>
+                            <li>遇到对向车辆时，无论对方是否使用远光，都必须提前减速并切换为近光，同时注视道路右侧，避免直视对方车灯。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 疲劳驾驶 -->
+        <section id="fatigue" style="margin-top: 60px;">
+            <div class="section-header">
+                <h2>疲劳驾驶预防</h2>
+                <p>夜间是疲劳驾驶的高发期，切勿心存侥幸</p>
+            </div>
+            <div class="card" style="border-left: 5px solid #e74c3c;">
+                <h3>🚨 疲劳驾驶的早期信号</h3>
+                <p>当您出现以下情况时，请立即停车休息：</p>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li><strong>身体反应迟钝：</strong>眼皮打架、频繁眨眼、视线模糊。</li>
+                    <li><strong>精神涣散：</strong>听到喇叭声才猛然惊醒，注意力无法集中。</li>
+                    <li><strong>动作变形：</strong>方向盘控制不稳，偶尔无意识画圈。</li>
+                    <li><strong>情绪波动：</strong>烦躁、易怒或出现幻觉。</li>
+                </ul>
+                <p style="margin-top: 15px; color: var(--text-secondary);"><strong>建议：</strong>连续驾驶超过4小时，或感到疲劳时，应立即在安全地带休息至少15-20分钟。</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+                <p>关于夜间开车的疑问与解答</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">夜间开车需要戴墨镜吗？</div>
+                <div class="faq-answer">
+                    <p>建议使用专门的防紫外线驾驶墨镜。普通的太阳镜在夜间可能会降低光线敏感度，导致看不清路面。驾驶墨镜通常能过滤刺眼眩光，而不会影响对暗处路况的判断。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">为什么夜间感觉车距变短了？</div>
+                <div class="faq-answer">
+                    <p>这是由于光线在夜间经过路面反射造成的视觉错觉。远光灯的照射距离虽然远，但会让驾驶员对距离产生误判。因此，在夜间行车时，一定要相信仪表盘的距离指示，而非目测。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">遇到对向车开远光灯怎么办？</div>
+                <div class="faq-answer">
+                    <p>请立即减速并切换为近光灯。不要试图通过直视对方车灯来寻找路面，这会暂时致盲。注视道路右侧路肩或护栏，利用对方的远光作为参照物来判断距离。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本指南</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    本站致力于提供专业、实用的夜间驾驶安全知识与技巧。安全驾驶，从掌握每一个细节开始。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#principles">核心原则</a></li>
+                    <li><a href="#lights">灯光技巧</a></li>
+                    <li><a href="#fatigue">疲劳预防</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>安全提示</h4>
+                <ul>
+                    <li>切勿疲劳驾驶</li>
+                    <li>定期检查车灯</li>
+                    <li>保持合理车速</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 夜间行车安全指南. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 手风琴交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
