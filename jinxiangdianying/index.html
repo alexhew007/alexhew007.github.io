@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金像电影大世界 - 华语电影经典回顾与观影指南</title>
+    <meta name="description" content="金像电影大世界致力于收录香港电影金像奖历年经典佳作，提供电影资料、获奖名单、导演演员介绍及观影指南，是影迷探索香港电影文化的权威平台。">
+    <meta name="keywords" content="金像电影大世界,香港电影,金像奖,香港电影金像奖,电影推荐,经典港片,王家卫,杜琪峰,梁朝伟">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary-color: #1a1a1a;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f5f5f5;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--white);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/cinema/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Styles */
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+        }
+
+        .section-title a {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #ffebee;
+            color: var(--primary-color);
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .rating {
+            color: #fbc02d;
+            font-weight: bold;
+        }
+
+        /* Featured Layout */
+        .featured-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .featured-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 30px;
+            color: var(--white);
+        }
+
+        .featured-overlay h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .featured-overlay p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .award-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 14px;
+        }
+
+        .award-list li:last-child {
+            border-bottom: none;
+        }
+
+        .award-year {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: var(--white);
+            padding: 60px 20px;
+        }
+
+        .info-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .info-item p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #999;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .grid-4, .grid-3, .featured-layout, .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card {
+                height: 250px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>★</span> 金像电影大世界
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">获奖名单</a></li>
+                    <li><a href="#">经典回顾</a></li>
+                    <li><a href="#">导演专题</a></li>
+                    <li><a href="#">影迷社区</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>光影传奇，致敬经典</h1>
+                <p>探索香港电影金像奖历年佳作，重温那些触动心灵的华语电影瞬间。这里是影迷的乐园，也是电影历史的缩影。</p>
+                <button class="btn">开始探索</button>
+            </div>
+        </section>
+
+        <!-- Latest Updates -->
+        <section class="container">
+            <div class="section-title">
+                <h2>最新资讯</h2>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/movie1/400/250" alt="电影海报" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">资讯</span>
+                        <h3 class="card-title">第42届香港电影金像奖获奖名单公布</h3>
+                        <p class="card-desc">备受瞩目的年度电影盛会圆满落幕，最佳影片花落谁家？《无名》与《满江红》展开激烈角逐。</p>
+                        <div class="card-meta">
+                            <span>2024-03-16</span>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/movie2/400/250" alt="电影海报" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">影评</span>
+                        <h3 class="card-title">深度解析：王家卫镜头下的都市孤独</h3>
+                        <p class="card-desc">从《花样年华》到《繁花》，探讨王家卫如何用光影构建出独特的东方美学与情感世界。</p>
+                        <div class="card-meta">
+                            <span>2024-03-14</span>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/movie3/400/250" alt="电影海报" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">人物</span>
+                        <h3 class="card-title">梁朝伟：影帝背后的低调与坚持</h3>
+                        <p class="card-desc">回顾梁朝伟的演艺生涯，从TVB小生到国际影帝，他用无数经典角色诠释了什么是演技。</p>
+                        <div class="card-meta">
+                            <span>2024-03-12</span>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured Classic -->
+        <section class="container">
+            <div class="section-title">
+                <h2>年度必看经典</h2>
+                <a href="#">全部分类 &rarr;</a>
+            </div>
+            <div class="featured-layout">
+                <article class="card featured-card">
+                    <img src="https://picsum.photos/seed/wongkarwai/800/600" alt="花样年华">
+                    <div class="featured-overlay">
+                        <span class="card-tag">最佳影片提名</span>
+                        <h3>花样年华</h3>
+                        <p>2000年上映 | 导演：王家卫 | 主演：梁朝伟、张曼玉</p>
+                        <p style="margin-top:10px; font-size:13px;">一段发乎情止乎礼的隐秘情感，一段被时光封存的东方浪漫。苏丽珍与周慕云的周旋，在弄堂与茶楼间上演。</p>
+                    </div>
+                </article>
+                <aside>
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">近期热门榜单</h4>
+                        <ul class="award-list">
+                            <li>
+                                <span><a href="#">无间道</a></span>
+                                <span class="award-year">2002</span>
+                            </li>
+                            <li>
+                                <span><a href="#">重庆森林</a></span>
+                                <span class="award-year">1994</span>
+                            </li>
+                            <li>
+                                <span><a href="#">天若有情</a></span>
+                                <span class="award-year">1990</span>
+                            </li>
+                            <li>
+                                <span><a href="#">桃姐</a></span>
+                                <span class="award-year">2011</span>
+                            </li>
+                            <li>
+                                <span><a href="#">桃姐</a></span>
+                                <span class="award-year">2011</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">影人风采</h4>
+                        <div style="display:flex; gap:10px; align-items:center;">
+                            <img src="https://picsum.photos/seed/director/80/80" alt="杜琪峰" style="border-radius:50%;">
+                            <div>
+                                <h5 style="margin-bottom:2px;">杜琪峰</h5>
+                                <p style="font-size:12px; color:#999;">银河映像创始人</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="container">
+            <div class="section-title">
+                <h2>分类浏览</h2>
+            </div>
+            <div class="grid-4">
+                <a href="#" class="card" style="text-align:center; justify-content:center; min-height:150px;">
+                    <span style="font-size:32px; color:var(--primary-color);">🎬</span>
+                    <h4 style="margin-top:10px;">动作片</h4>
+                </a>
+                <a href="#" class="card" style="text-align:center; justify-content:center; min-height:150px;">
+                    <span style="font-size:32px; color:var(--primary-color);">💔</span>
+                    <h4 style="margin-top:10px;">爱情片</h4>
+                </a>
+                <a href="#" class="card" style="text-align:center; justify-content:center; min-height:150px;">
+                    <span style="font-size:32px; color:var(--primary-color);">🕵️</span>
+                    <h4 style="margin-top:10px;">悬疑片</h4>
+                </a>
+                <a href="#" class="card" style="text-align:center; justify-content:center; min-height:150px;">
+                    <span style="font-size:32px; color:var(--primary-color);">🎭</span>
+                    <h4 style="margin-top:10px;">喜剧片</h4>
+                </a>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>关于金像电影大世界</h3>
+                    <p>金像电影大世界是一个专注于香港电影文化的综合性平台。我们致力于收录香港电影金像奖历年获奖作品，为影迷提供详尽的电影资料、幕后故事和观影指南。无论您是资深影评人还是刚入门的港片爱好者，这里都有您想了解的内容。</p>
+                    <p>我们的目标是通过数字化整理，让更多年轻人了解香港电影的辉煌历史，传承经典艺术。</p>
+                </div>
+                <div class="info-item">
+                    <h3>如何参与</h3>
+                    <p>如果您有关于某部电影的独家资料、影评文章或相关建议，欢迎通过我们的社区版块投稿。我们期待与每一位热爱电影的朋友交流互动。</p>
+                    <ul style="margin-top:20px; color:var(--text-main);">
+                        <li style="margin-bottom:10px;">✅ 提交影评文章</li>
+                        <li style="margin-bottom:10px;">✅ 分享观影心得</li>
+                        <li style="margin-bottom:10px;">✅ 报错或提供资料</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>金像电影大世界</h4>
+                <p style="font-size:14px; line-height:1.8;">专注香港电影金像奖文化，收录经典港片，分享观影乐趣。让光影记忆永存。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">获奖名单大全</a></li>
+                    <li><a href="#">经典电影推荐</a></li>
+                    <li><a href="#">导演作品集</a></li>
+                    <li><a href="#">影迷论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">王家卫专题</a></li>
+                    <li><a href="#">周星驰作品</a></li>
+                    <li><a href="#">杜琪峰银河映像</a></li>
+                    <li><a href="#">90年代经典</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">投稿建议</a></li>
+                    <li><a href="#">合作洽谈</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 金像电影大世界 版权所有. 仅供学习与展示使用.</p>
+        </div>
+    </footer>
+
+</body>
+              </html>
