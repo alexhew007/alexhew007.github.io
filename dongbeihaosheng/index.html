@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="东北好声音 - 辽宁省最专业的民间音乐交流与展示平台。汇聚东北二人转、流行唱法、民谣歌手，提供在线试听、视频展播、歌手招募及赛事资讯。">
+    <meta name="keywords" content="东北好声音,辽宁好声音,二人转,民间歌手,音乐比赛,沈阳音乐,吉林音乐">
+    <title>东北好声音-民间音乐交流与展示平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f1faee;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .btn-subscribe:hover {
+            background-color: #d62839;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/musicstage/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 35px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Content Section */
+        .section-title {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Video Cards */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            background-color: #000;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+        }
+
+        .ranking-list {
+            counter-reset: ranking;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .ranking-num {
+            width: 25px;
+            height: 25px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .ranking-item:nth-child(1) .ranking-num { background: #ffd700; color: #fff; }
+        .ranking-item:nth-child(2) .ranking-num { background: #c0c0c0; color: #fff; }
+        .ranking-item:nth-child(3) .ranking-num { background: #cd7f32; color: #fff; }
+
+        .ranking-info h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .ranking-info span {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Category Tags */
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f1f1f1;
+            color: #555;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: var(--secondary-color);
+            color: #fff;
+        }
+
+        /* About Section */
+        .about-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-top: 40px;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                margin: 15px 0;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                东北好声音<span>Music</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新视频</a></li>
+                    <li><a href="#">歌手榜单</a></li>
+                    <li><a href="#">赛事资讯</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-subscribe">报名参赛</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>让每一个声音被听见</h1>
+            <p>汇聚东北民间音乐力量，展示草根才艺，打造最具影响力的音乐交流平台。无论你是二人转传人，还是流行唱法爱好者，这里都有你的舞台。</p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="document.getElementById('videos').scrollIntoView({behavior: 'smooth'})">观看热门视频</button>
+                <button class="btn-primary" style="background: transparent; border: 2px solid #fff;">了解赛事规则</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="videos">
+        <!-- Main Content -->
+        <main>
+            <section>
+                <div class="section-title">
+                    <h2>最新上镜</h2>
+                    <a href="#">查看更多 &gt;</a>
+                </div>
+                <div class="video-grid">
+                    <article class="video-card">
+                        <a href="#">
+                            <div class="video-thumbnail">
+                                <img src="https://picsum.photos/seed/singer1/400/300" alt="歌手表演">
+                                <div class="play-icon">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">纯真嗓音！95后女孩翻唱《东北人都是活雷锋》</h3>
+                                <div class="video-meta">
+                                    <span>播放: 12.5万</span>
+                                    <span>2天前</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="video-card">
+                        <a href="#">
+                            <div class="video-thumbnail">
+                                <img src="https://picsum.photos/seed/singer2/400/300" alt="二人转表演">
+                                <div class="play-icon">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">经典再现：赵本山风格小品片段，笑声不断</h3>
+                                <div class="video-meta">
+                                    <span>播放: 8.3万</span>
+                                    <span>5小时前</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="video-card">
+                        <a href="#">
+                            <div class="video-thumbnail">
+                                <img src="https://picsum.photos/seed/singer3/400/300" alt="摇滚现场">
+                                <div class="play-icon">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">硬核摇滚！沈阳地下乐队现场直击，燃爆全场</h3>
+                                <div class="video-meta">
+                                    <span>播放: 5.1万</span>
+                                    <span>1周前</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="video-card">
+                        <a href="#">
+                            <div class="video-thumbnail">
+                                <img src="https://picsum.photos/seed/singer4/400/300" alt="民歌演唱">
+                                <div class="play-icon">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">草原风情：吉林民间歌手演唱《套马杆》</h3>
+                                <div class="video-meta">
+                                    <span>播放: 9.2万</span>
+                                    <span>3天前</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="video-card">
+                        <a href="#">
+                            <div class="video-thumbnail">
+                                <img src="https://picsum.photos/seed/singer5/400/300" alt="乐器演奏">
+                                <div class="play-icon">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">唢呐独奏《百鸟朝凤》，气势恢宏震撼人心</h3>
+                                <div class="video-meta">
+                                    <span>播放: 15万</span>
+                                    <span>1个月前</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="video-card">
+                        <a href="#">
+                            <div class="video-thumbnail">
+                                <img src="https://picsum.photos/seed/singer6/400/300" alt="组合演唱">
+                                <div class="play-icon">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">双人对唱《情网》，情感真挚打动无数听众</h3>
+                                <div class="video-meta">
+                                    <span>播放: 6.7万</span>
+                                    <span>4天前</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <div class="section-title">
+                    <h2>关于“东北好声音”</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p><strong>东北好声音</strong>是一个致力于挖掘和推广东北地区民间音乐人才的综合性展示平台。我们相信，真正的艺术往往诞生于民间，来自生活。无论是二人转、东北大鼓，还是流行、摇滚、民谣，只要你有才华，这里就是你的起点。</p>
+                        <p>平台自成立以来，已累计收录超过5000名民间歌手的视频作品，举办了多场线上线下的音乐交流会。我们为草根歌手提供展示自我的舞台，也为观众提供欣赏纯正东北文化的窗口。</p>
+                        <p>在这里，我们不看背景，不看资历，只看你的声音是否足够打动人心。我们致力于传承东北地域文化，弘扬正能量，让世界听到来自黑土地的精彩声音。</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/stage/600/400" alt="舞台表演">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <div class="section-title">
+                    <h3>歌手人气榜</h3>
+                </div>
+                <div class="ranking-list">
+                    <a href="#" class="ranking-item">
+                        <div class="ranking-num">1</div>
+                        <div class="ranking-info">
+                            <h4>铁岭老李</h4>
+                            <span>流行唱法</span>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="ranking-num">2</div>
+                        <div class="ranking-info">
+                            <h4>丹东阿梅</h4>
+                            <span>二人转</span>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="ranking-num">3</div>
+                        <div class="ranking-info">
+                            <h4>长春小刚</h4>
+                            <span>摇滚</span>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="ranking-num">4</div>
+                        <div class="ranking-info">
+                            <h4>锦州大姐</h4>
+                            <span>民歌</span>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="ranking-num">5</div>
+                        <div class="ranking-info">
+                            <h4>通化小哥</h4>
+                            <span>民谣</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="section-title">
+                    <h3>热门分类</h3>
+                </div>
+                <div class="tags-cloud">
+                    <a href="#" class="tag">二人转</a>
+                    <a href="#" class="tag">流行音乐</a>
+                    <a href="#" class="tag">摇滚现场</a>
+                    <a href="#" class="tag">民间小调</a>
+                    <a href="#" class="tag">乐器演奏</a>
+                    <a href="#" class="tag">东北大鼓</a>
+                    <a href="#" class="tag">经典老歌</a>
+                    <a href="#" class="tag">翻唱达人</a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="section-title">
+                    <h3>近期赛事</h3>
+                </div>
+                <ul style="font-size: 14px; color: #555;">
+                    <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                        <strong style="display:block; margin-bottom:5px;">2023 冬季民歌争霸赛</strong>
+                        <span style="color:#999;">报名截止：2023年12月20日</span>
+                    </li>
+                    <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                        <strong style="display:block; margin-bottom:5px;">草根摇滚音乐节</strong>
+                        <span style="color:#999;">举办地：沈阳铁西广场</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <p style="color: #ccc; font-size: 14px; line-height: 1.8;">
+                    东北好声音致力于为东北民间音乐爱好者提供一个展示才华、交流技艺的平台。我们尊重每一位创作者，致力于传承和发扬东北地域音乐文化。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#">网站首页</a></li>
+                    <li><a href="#">视频中心</a></li>
+                    <li><a href="#">歌手招募</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>热门标签</h3>
+                <div class="tags-cloud">
+                    <a href="#" class="tag">二人转</a>
+                    <a href="#" class="tag">流行</a>
+                    <a href="#" class="tag">摇滚</a>
+                    <a href="#" class="tag">民歌</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>联系方式</h3>
+                <ul>
+                    <li>电话：024-12345678</li>
+                    <li>邮箱：contact@dbvocal.com</li>
+                    <li>地址：辽宁省沈阳市和平区文化路</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 东北好声音 版权所有 | 辽ICP备12345678号</p>
+        </div>
+    </footer>
+
+</body>
+                  </html>
